@@ -23,15 +23,12 @@ In more details:
 
 ### Results:
 
-A folder with results for the day has been created at /afs/cern.ch/eng/sl/lintrack/LHC_commissioning2022/COM_2022_04_23_injection_validation
+A folder with results for the day has been created at `/afs/cern.ch/eng/sl/lintrack/LHC_commissioning2022/COM_2022_04_23_injection_validation`.
 One can find there a folder with plots (and commands to reproduce them), another one with detected bad BPMs from SVD and IF cleaning, and Beam[12] symlinks to the location of analyses done for the day. See screenshot attached below.
 
 **Follow up**: Calculation of chromaticity correction for tomorrow's shift.
 
 **Problems**: Nothing important to report, at some point we lost the concentrator but this was later fixed
-
-**Email to Tobias**:
-what is the coupling in the ramp status? reiterated?
 
 # 24.04 (Day 2)
 ## Shift Summary
@@ -71,7 +68,8 @@ what is the coupling in the ramp status? reiterated?
 - Successfully got measurements at flat-top! First analysis of the machine at flat-top shows expected range of values for linear optics. 
 - Had a look at local errors, tried trimming in the corrections Tobias had calculated for 2018 to see what segment-by-segment yields, and it seems the local errors are quite different this time around (corrections are too weak in IP1, too strong in IP5). Local errors seem similar to those found in 2012.
 
-A folder in lintrack has been created that holds symlinks and plots. It is at /afs/cern.ch/eng/sl/lintrack/LHC_commissioning2022/COM_2022_04_25_flattop_optics/
+A folder in lintrack has been created that holds symlinks and plots.
+It is at `/afs/cern.ch/eng/sl/lintrack/LHC_commissioning2022/COM_2022_04_25_flattop_optics/`
 
 ### Needed Follow-up:
 
