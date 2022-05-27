@@ -143,10 +143,10 @@ Relevant plots and scripts have been added to lintrack. They are available at
 - Measured during the ramp-up of ballistic optics to 6.5TeV. The coupling was enormous during the ramp so we lost half of beam 1 but beam 2 was fine.
 - Measured ballistic optics but without degaussed triplet.
 
-![img](images/day6-1.png)
-![img](images/day6-2.png)
-![img](images/day6-3.png)
-![img](images/day6-4.png)
+[<img src="images/day6-1.png" alt="img" width=200>](images/day6-1.png)
+[<img src="images/day6-2.png" alt="img" width=200>](images/day6-2.png)
+[<img src="images/day6-3.png" alt="img" width=200>](images/day6-3.png)
+[<img src="images/day6-4.png" alt="img" width=200>](images/day6-4.png)
 
 # 02.05. (Day 7)
 
