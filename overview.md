@@ -155,3 +155,101 @@ Relevant plots and scripts have been added to lintrack. They are available at
 - Measurements at 133cm (end of ramp)
 - Measurements at 60cm (mid-squeeze)
 - Measurements at 30cm (mid-squeeze)
+
+## Shift Summary
+
+### Done during the Shift:
+
+- Measurements and local corrections validations at 133cm -> very good, below 10% beta-beating
+- Measurements and local corrections validations at 60cm -> very good, below 10% beta-beating too.
+- Measurements and local corrections tests at 30cm, determined trims with Segment-by-Segment and Action Phase Jump. See attached screenshots of 30cm before local corrections vs 30cm with today's corrections trimmed in. IP5 was based on SbS and IP1 was based on APJ for the first time.
+- Peak beta-beat around 17% at 30cm after local corrections and the beta-beat at the IP around 8% with small waist shift (~4cm).
+- An arc-by-arc correction of the global coupling will be calculated based on this measurement for beam1. The plot also shows why the BBQ can show so different result from the ADT-measurements. 
+- Local corrections incorporated in the ramp and squeeze. 
+
+- Did quick qualitative check of IR1/5 b4 correction by trimming off RCOX and looking at BBQ measurement quality. Saw fairly clear deterioration of the BBQ signal for the V plane when the IR-octupole correction was removed (screenshot). Hard to say for horizontal plane. Will need to measure detuning - but as mentioned above this would benefit from prior collimation setup.
+
+
+Relevant plots and scripts have been added to lintrack. They are available at 
+
+/afs/cern.ch/eng/sl/lintrack/LHC_commissioning2022/COM_2022_05_02_squeeze_local_corrections/plots
+
+
+**Relevant**:
+-Issues when kicking, would potentially benefit from collimation setup for the next studies, both for global corrections and nonlinear ones.
+
+[<img src="images/day7-lhcb1_30cm_betabeat_before_vs_after_local_corrections.png" alt="img" width=200>](images/day7-lhcb1_30cm_betabeat_before_vs_after_local_corrections.png)
+[<img src="images/day7-lhcb1_coupling_rdts_amp.png" alt="img" width=200>](images/day7-lhcb1_coupling_rdts_amp.png)
+[<img src="images/day7-lhcb2_30cm_betabeat_before_vs_after_local_corrections(1).png" alt="img" width=200>](images/day7-lhcb2_30cm_betabeat_before_vs_after_local_corrections(1).png)
+[<img src="images/day7-screenShot_May_3rd_2022_03_44_00.png" alt="img" width=200>](images/day7-screenShot_May_3rd_2022_03_44_00.png)
+[<img src="images/day7-screenShot_May_3rd_2022_03_44_13.png" alt="img" width=200>](images/day7-screenShot_May_3rd_2022_03_44_13.png)
+
+# 08.05 Ballistic Optics Measurements (Day 8)
+
+## Shift Summary
+
+### Done during the shift:
+- Measurements for coupling correction, which was very well corrected (but BBQ was not helpful, said it would be spoiled bu in the end coupling was better).
+- On and off-momentum measurements. Normalized dispersion looks good in both beams.
+- Many amplitude detuning measurements, done fast as time ran out. Only very little losses seen until 50-60%. Looked at some spectra and nat. tunes were well visible.
+- Calibration factors seem to look good, but Mael is lazy and wants to sleep (so French).
+- Brownies were amazing!
+
+### Problems:
+- Had issues masking ATLAS BCM during the whole shift (until 15min before end), and ATLAS control had to mask every 30 seconds manually. (ALWAYS CHECK BUTTON IN MULTITURN TO BE GREEN!)
+
+## Then continued to
+
+### Squeezing to 60cm
+
+
+[<img src="images/day8-b1_60cm_coupling_before_after.png" alt="img" width=200>](images/day8-b1_60cm_coupling_before_after.png)
+
+### Squeezing to 30cm
+
+[<img src="images/day8-beta_beating.png" alt="img" width=200>](images/day8-beta_beating.png)
+
+### On/OffMom
+
+### AmplDet
+
+### Local Coupling
+
+Looking at more recent measurements to try and determine a local coupling setting for what we saw around IP1.
+Quite similar to what I had seen with previous 30cm measurements.
+
+**Settings are**:
+kqsx3.l1 = kqsx3.l1;
+kqsx3.r1 = kqsx3.r1 + 1e-4;
+
+Going up/down from 1e-4 favors one beam over the other. I'm happy with this setting so we will try to trim it in after kicks are done.
+
+To trim:
+- This is a correction value from SbS that matches the observed machine so there's a sign change to be done.
+- These are SKEW magnets so there is another sign change to be done.
+=> overall we need to trim the value above with the same sign (double sign change), so: 1E-4
+
+### Trimming Crossing Angles In
+
+# 10.05 (Day 10)
+
+## Plan for the shift:
+- Some corrections at 30cm
+- Felix's Rigid Waist Shift for Local Coupling
+- Nonlinear measurements at 30cm
+
+## Shift Summary
+### Done during the Shift:
+- At 30 cm we measured the calculated correction for flat orbit (see attached plot). Peak beta-beat went from ~19% to 9% with most points well below 5%.
+- Did Felix S.'s procedure with the rigid waist shift knob at IP5. Data to be analyzed to find an optimal setting of the colinearity knob.
+
+Relevant plots and scripts have been added to lintrack. They are available at 
+
+/afs/cern.ch/eng/sl/lintrack/LHC_commissioning2022/COM_2022_05_10_30cm_global_corrections_and_rigid_waist_shift/plots
+
+
+
+### Issues:
+- Some issues injecting in the beginning of the night with two issues: a real time trim on the RF that had to be reset and then erratic kicker. After the advice to make a dry injection everything worked fine.
+- Warning when we started the ramp that not all collimators were set but after some guidance it was clear that this was due to that not all collimators are actually moving.
+- When trimming out the knobs that we had used for the test, the RQ6.R5 tripped and the beams were dumped.
