@@ -30,6 +30,9 @@
 \usepackage{caption}
 \usepackage[absolute,overlay]{textpos}
 
+\graphicspath{{./images}{./images/beamtest}}
+\newcommand{\highl}[1]{\textbf{#1}}
+
 
 % Meta ------------------------------------------------------------------------
 \author[OMC]{Andreas Wegscheider on behalf of the OMC team}
@@ -53,10 +56,16 @@
 \begin{frame}{Full Outline}
 \tableofcontents
 \end{frame}
+\small
 
 \section{Injection Optics}
 \begin{frame}{Injection optics}
-
+    \includegraphics[width=0.49\linewidth]{images/beamtest/lhcb1_betabeat_vs_beamtest.pdf}
+    \hfill
+    \includegraphics[width=0.49\linewidth]{images/beamtest/lhcb2_betabeat_vs_beamtest.pdf}
+    
+    Measured the injection optics with the corrections of \highl{2021 beam test}.
+    Looks similar, \highl{no corrections} were re-calculated.
 \end{frame}
 
 \section{The Way to Top Energy}
