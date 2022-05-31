@@ -1,0 +1,204 @@
+\documentclass[11pt,usenames,dvipsnames,aspectratio=169]{beamer}
+%\usetheme{cern}
+\usetheme{cernomc}
+
+% Beamer Setup ---
+\setbeamercovered{transparent=5} 
+\setbeamertemplate{navigation symbols}{} 
+
+\AtBeginSection{%
+	\begin{frame}[noframenumbering]{Outline}
+	\tableofcontents[currentsection]
+	\end{frame}
+}
+
+% Imports ---
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{bm}  % bold math
+\usepackage{xcolor}  % define colors
+\usepackage{graphicx}
+\usepackage{grffile}  % filenames with dots 
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage[absolute,overlay]{textpos}
+
+% some shenanigans -------------------------------------------------------------
+\newcommand{\highl}[1]{\textbf{#1}}
+
+
+% Meta -------------------------------------------------------------------------
+\author[OMC]{%
+Andreas Wegscheider on behalf of the OMC team\\%
+% hacky, I know ...
+\centering%
+\includegraphics[width=3cm]{omc-logo.pdf}%
+}
+\title[LHC 2022]{LHC Commissionning 2022}
+\logo{} 
+\titlegraphic{}
+\institute{CERN}
+\date[09.06.22]{09.06.2022}
+\subject{} 
+
+% Document ---------------------------------------------------------------------
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+
+\begin{frame}{Full Outline}
+\tableofcontents
+\end{frame}
+
+
+\small
+
+\section{The Way to Top Energy}
+
+% Injection --------------------------------------------------------------------
+
+
+\begin{frame}{Injection optics}
+    \includegraphics[width=0.49\linewidth]{images/beamtest/b1_bb.pdf}
+    \hfill
+    \includegraphics[width=0.49\linewidth]{images/beamtest/b2_bb.pdf}
+    
+    Measured the injection optics with the corrections of \highl{2021 beam test}.
+    Looks similar, \highl{no corrections} were re-calculated.
+\end{frame}
+
+
+% Ramp -------------------------------------------------------------------------
+
+
+\begin{frame}{Coupling in the Ramp}
+    \includegraphics[width=0.49\linewidth]{images/ramp/B1_coupling_correction_knobs_in_ramp.pdf}
+    \hfill
+    \includegraphics[width=0.49\linewidth]{images/ramp/B2_coupling_correction_knobs_in_ramp.pdf}
+    
+    \begin{itemize}
+        \item %
+            did \highl{manual coupling} measurement during the ramp because the coupling server
+            \highl{failed to give} good results 
+        \item %
+            calculated \highl{coupling corrections} (verifying on the way that the selected model didn't deteriorate the calculations)
+        \item %
+            these were \highl{programmed in} to be applied during the next ramp
+        \item %
+            re-measure showed that we corrected \highl{$< 0.005$ at every pick-up point}
+    \end{itemize}
+\end{frame}
+
+
+% Flattop ---------------------------------------------------------------------
+
+
+\begin{frame}{Flattop}
+    
+    \includegraphics[width=0.49\linewidth]{images/flattop/b1_bb.pdf}
+    \hfill
+    \includegraphics[width=0.49\linewidth]{images/flattop/b2_bb.pdf}
+    \begin{itemize}
+        \item measurements at \SI{6.8}{TeV} performed
+        \item first step for corrections
+    \end{itemize}
+    
+\end{frame}
+
+\section{Squeeze}
+
+\begin{frame}{\SI{30{cm} Optics -- record high \beta~beating}
+
+\includegraphics[width=0.49\linewidth]{im}
+    
+\end{frame}
+
+\begin{frame}{30cm Optics}
+    \begin{center}
+        \only<1>{
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam1_x_IP1.pdf}
+            \hspace{1cm}
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam1_x_IP5.pdf}
+            \\
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam1_y_IP1.pdf}
+            \hspace{1cm}
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam1_y_IP5.pdf}
+        }
+        \only<2>{
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam2_x_IP1.pdf}
+            \hspace{1cm}
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam2_x_IP5.pdf}
+            \\
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam2_y_IP1.pdf}
+            \hspace{1cm}
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam2_y_IP5.pdf}
+        }
+        \only<3>{
+        {\tiny
+         \begin{tabular}{l|lSSS|c|} \toprule
+              & \textbf{Circuit}%
+              & \multicolumn{3}{c|}{$\Delta k (10^{-5}\SI{}{m^{-2}})$}
+              & \textbf{Polarity}%
+              \\ \cmidrule{2-6}
+              &
+              & \multicolumn{1}{c}{\textbf{Run 2}} &{\textbf{APJ}} &{\textbf{SbS}}
+              & \textbf{LSA} \\\hline \midrule
+     IR1 & \textbf{ ktqx1.l1}  &  1.23 &  0    &  1.23 & - \\
+         & \textbf{ ktqx1.r1}  & -1.23 &  0    & -1.23 & +\\
+         & \textbf{ ktqx2.l1}  &  0.65 &  1.15 &  0.41 & +  \\
+         & \textbf{ ktqx2.r1}  & -1.0  & -0.87 & -0.70 & - \\
+         & \textbf{ ktqx3.l1}  &  1.22 &  1.94 &  1.22 & - \\
+         & \textbf{ ktqx3.r1}  & -1.22 & -2.88 & -1.22 & +\\\hline \midrule
+     IR5 & \textbf{ ktqx1.l5}  &  2.0  &  0    &  2.25 &  -\\
+         & \textbf{ ktqx1.r5}  & -2.0  &  0    & -2.10 & +\\
+         & \textbf{ ktqx2.l5}  &  0.26 &  0.38 &  0.16 & +\\
+         & \textbf{ ktqx2.r5}  &  1.48 &  0.93 &  1.35 & -\\
+         & \textbf{ ktqx3.l5}  &  1.49 &  3.40 &  2.25 & -\\
+         & \textbf{ ktqx3.r5}  & -1.49 & -2.46 & -2.10 & +\\\hline \midrule
+        \end{tabular} 
+        }
+        }
+    \end{center}
+    \only<4>{
+    \begin{center}
+    \includegraphics[width=0.35\linewidth]{images/lhcb1_before_vs_after_localcorr.pdf}
+    \end{center}
+    }
+    \begin{itemize}
+        \item measurements at $\beta^*=\SI{30}{\centi\meter}$ performed
+        \item corrections calculated using \highl{APJ}, \highl{SbS} and taken from \highl{run2}
+        \item APJ and SbS yield \highl{similar results} when applied,
+            run2 corrections are over-correcting (but same pattern)
+    \end{itemize}
+\end{frame}
+
+
+% Ballistic -------------------------------------------------------------------
+\section{Ballistic}
+\begin{frame}{Ballistic Optics}
+    
+\end{frame}
+
+
+% Non-Linear ------------------------------------------------------------------
+\section{Non-linear optics}
+
+
+\begin{frame}{Amplitude Detuning}
+    
+\end{frame}
+
+
+% \backcover
+
+\end{document}

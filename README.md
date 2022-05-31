@@ -1,4 +1,4 @@
-# LHC Commissionning 2022
+# LHC Commissioning 2022
 
 ## Introduction
 
@@ -8,5 +8,13 @@ The Beamer presentation can best be viewed on the corresponding [overleaf projec
 
 ## Supporting Materials
 
-A [Commissionning Overview](./overview.md) collects the logbook summaries for quick lookup of what happened on which day.
+A [Commissioning Overview](./overview.md) collects the logbook summaries for quick lookup of
+what happened on which day.
+
+## Presentation
+
+`presentation.tex` contains the LaTeX source code for the presentation pdf (with "animations").
+
+A more user-friendly and readable version of the talk will be in `handout.tex`, with all the animations
+and redundant sub-slides removed.
 

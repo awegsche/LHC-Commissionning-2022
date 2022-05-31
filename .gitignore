@@ -2,7 +2,19 @@
 *.out
 *.toc
 *.aux
-*.tex
 *.nav
 *.snm
 *-inc*
+*.gp
+*.sh
+
+# only generated pdf files in root
+/*.pdf
+
+# ignore the plot .tex files
+*.tex
+
+# but reinclude the main .tex files
+!presentation.tex
+!handout.tex
+
