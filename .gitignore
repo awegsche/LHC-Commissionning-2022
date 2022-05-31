@@ -8,8 +8,8 @@
 *.gp
 *.sh
 
-# only generated pdf files in root
-/*.pdf
+presentation.pdf
+handout.pdf
 
 # ignore the plot .tex files
 *.tex
