@@ -1,4 +1,4 @@
-\documentclass[11pt,usenames,dvipsnames,aspectratio=169]{beamer}
+\documentclass[4pt,usenames,dvipsnames,aspectratio=169]{beamer}
 %\usetheme{cern}
 \usetheme{cernomc}
 
@@ -17,6 +17,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{unicode-math}
 \usepackage{mathtools}
 \usepackage{bm}  % bold math
 \usepackage{graphicx}
@@ -28,6 +29,14 @@
 \usepackage{multirow}
 \usepackage{caption}
 \usepackage[absolute,overlay]{textpos}
+
+\usepackage{fontspec}
+\usefonttheme{serif}
+%\setmainfont{STIX Two Text}
+%\setmathfont{STIX Two Math}
+\setmainfont{TeX Gyre Bonum}
+\setmathfont{TeX Gyre Bonum Math}
+
 
 % some shenanigans -------------------------------------------------------------
 \newcommand{\highl}[1]{\textbf{#1}}
@@ -43,7 +52,7 @@ Andreas Wegscheider on behalf of the OMC team\\%
 \centering%
 \includegraphics[width=3cm]{omc-logo.pdf}%
 }
-\title[LHC 2022]{LHC Commissionning 2022}
+\title[LHC 2022]{LHC Commissioning 2022}
 \logo{} 
 \titlegraphic{}
 \institute{CERN}
@@ -62,8 +71,6 @@ Andreas Wegscheider on behalf of the OMC team\\%
 \tableofcontents
 \end{frame}
 
-
-\small
 
 \section{The Way to Top Energy}
 
@@ -122,7 +129,7 @@ Andreas Wegscheider on behalf of the OMC team\\%
 \section{Squeeze}
 
 
-\begin{frame}{\SI{30}{cm} Optics -- record high $\beta$~beating}
+\begin{frame}{30\,cm Optics -- record high $\beta$~beating}
 
     \includegraphics[width=0.49\linewidth]{images/squeeze/b1_recordhigh.pdf}
     \hfill
@@ -136,7 +143,7 @@ Andreas Wegscheider on behalf of the OMC team\\%
 \end{frame}
 
 
-\begin{frame}{30cm Optics \only<1>{-- Beam~1}\only<2>{-- Beam~2}}
+\begin{frame}{30\,cm Optics \only<1>{-- Beam~1}\only<2>{-- Beam~2}}
     \begin{center}
         \only<1>{
             \includegraphics[width=0.4\linewidth]{images/flattop/beam1_x_IP1.pdf}
@@ -185,13 +192,13 @@ Andreas Wegscheider on behalf of the OMC team\\%
     \begin{itemize}
         \item measurements at $\beta^*=\SI{30}{\centi\meter}$ performed
         \item corrections calculated using \highl{APJ}, \highl{SbS} and taken from \highl{run2}
-        \item APJ and SbS yield \highl{similar results} when applied,
-            run2 corrections are over-correcting
+        \item APJ and SbS yield \highl{similar corrections},
+            run2 corrs are over-correcting
     \end{itemize}
 \end{frame}
 
 
-\begin{frame}{\SI{30}{cm} Optics -- before and after local corrections}
+\begin{frame}{30\,cm Optics -- before and after local corrections}
 
     \begin{center}
     \includegraphics[width=0.49\linewidth]{images/squeeze/b1_bb_comp.pdf}
@@ -208,7 +215,7 @@ Andreas Wegscheider on behalf of the OMC team\\%
 \end{frame}
 
 
-\begin{frame}{\SI{30}{cm} Optics -- before and after global corrections}
+\begin{frame}{30\,cm Optics -- before and after global corrections}
 
     \begin{center}
     \includegraphics[width=0.49\linewidth]{images/squeeze/b1_bb_comp.pdf}
@@ -217,9 +224,7 @@ Andreas Wegscheider on behalf of the OMC team\\%
     \end{center}
     
     \begin{itemize}
-        \item $\beta$~beating \highl{after implementation} of local corrections in IPs \textbf{1}, \textbf{2}, \textbf{5} and \textbf{8}
-        \item IP1 correction is taken from \highl{APJ}, others from \highl{SbS}
-        \item $\beta$~beating stays \highl{under 20\%}
+        \item after correction \highl{under 5\,\%} $\beta$~beating
     \end{itemize}
     
 \end{frame}
@@ -237,10 +242,24 @@ Andreas Wegscheider on behalf of the OMC team\\%
 
 
 \begin{frame}{Chromaticity}
+    \begin{center}
+        \includegraphics[width=0.49\linewidth]{images/nonlinear/comparison/qxb1q4.png}
+    \end{center}
     \begin{itemize}
         \item $Q''$ agrees with beam test, $Q'''$ does not
         \item $Q'''$ corrected in a first step
         \item $Q'''$ and $Q''$ corrected in second iteration
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{b5 Resonance}
+    \begin{center}
+        \includegraphics[width=0.5\linewidth]{images/nonlinear/b5_preliminary.png}
+    \end{center}
+    \begin{itemize}
+        \item b5 resonance observed
+        \item seems to get worse after $Q'''$ corrections (non-global source of b5)
     \end{itemize}
 \end{frame}
 
