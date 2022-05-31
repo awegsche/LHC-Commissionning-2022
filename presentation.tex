@@ -19,7 +19,6 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{bm}  % bold math
-\usepackage{xcolor}  % define colors
 \usepackage{graphicx}
 \usepackage{grffile}  % filenames with dots 
 \usepackage{tikz}
@@ -32,6 +31,9 @@
 
 % some shenanigans -------------------------------------------------------------
 \newcommand{\highl}[1]{\textbf{#1}}
+\definecolor{RunTwored}{RGB}{200,0,0}
+\definecolor{APJgreen}{RGB}{20,150,0}
+\definecolor{SbSorange}{RGB}{240,150,0}
 
 
 % Meta -------------------------------------------------------------------------
@@ -73,8 +75,10 @@ Andreas Wegscheider on behalf of the OMC team\\%
     \hfill
     \includegraphics[width=0.49\linewidth]{images/beamtest/b2_bb.pdf}
     
-    Measured the injection optics with the corrections of \highl{2021 beam test}.
-    Looks similar, \highl{no corrections} were re-calculated.
+    \begin{itemize}
+        \item  Measured the injection optics with the corrections of \highl{2021 beam test}.
+        \item Looks similar, \highl{no corrections} were re-calculated.
+    \end{itemize}
 \end{frame}
 
 
@@ -124,6 +128,11 @@ Andreas Wegscheider on behalf of the OMC team\\%
     \hfill
     \includegraphics[width=0.49\linewidth]{images/squeeze/b2_recordhigh.pdf}
     
+    \begin{itemize}
+        \item peak $\beta$~beating of \textbf{150 \%}
+        \item highest ever measured in the LHC
+    \end{itemize}
+    
 \end{frame}
 
 
@@ -155,20 +164,20 @@ Andreas Wegscheider on behalf of the OMC team\\%
               & \textbf{Polarity}%
               \\ \cmidrule{2-6}
               &
-              & \multicolumn{1}{c}{\textbf{Run 2}} &{\textbf{APJ}} &{\textbf{SbS}}
+              & \multicolumn{1}{c}{\color{RunTwored}\textbf{Run 2}} &{\color{APJgreen}\textbf{APJ}} &{\color{SbSorange}\textbf{SbS}}
               & \textbf{LSA} \\\hline \midrule
-     IR1 & \textbf{ ktqx1.l1}  &  1.23 &  0    &  1.23 & - \\
-         & \textbf{ ktqx1.r1}  & -1.23 &  0    & -1.23 & +\\
-         & \textbf{ ktqx2.l1}  &  0.65 &  1.15 &  0.41 & +  \\
-         & \textbf{ ktqx2.r1}  & -1.0  & -0.87 & -0.70 & - \\
-         & \textbf{ ktqx3.l1}  &  1.22 &  1.94 &  1.22 & - \\
-         & \textbf{ ktqx3.r1}  & -1.22 & -2.88 & -1.22 & +\\\hline \midrule
-     IR5 & \textbf{ ktqx1.l5}  &  2.0  &  0    &  2.25 &  -\\
-         & \textbf{ ktqx1.r5}  & -2.0  &  0    & -2.10 & +\\
-         & \textbf{ ktqx2.l5}  &  0.26 &  0.38 &  0.16 & +\\
-         & \textbf{ ktqx2.r5}  &  1.48 &  0.93 &  1.35 & -\\
-         & \textbf{ ktqx3.l5}  &  1.49 &  3.40 &  2.25 & -\\
-         & \textbf{ ktqx3.r5}  & -1.49 & -2.46 & -2.10 & +\\\hline \midrule
+     IR1 & \texttt{ktqx1.l1} & \color{RunTwored} 1.23 & \color{APJgreen} 0    & \color{SbSorange} 1.23 & - \\
+         & \texttt{ktqx1.r1} & \color{RunTwored}-1.23 & \color{APJgreen} 0    & \color{SbSorange}-1.23 & + \\
+         & \texttt{ktqx2.l1} & \color{RunTwored} 0.65 & \color{APJgreen} 1.15 & \color{SbSorange} 0.41 & + \\
+         & \texttt{ktqx2.r1} & \color{RunTwored}-1.0  & \color{APJgreen}-0.87 & \color{SbSorange}-0.70 & - \\
+         & \texttt{ktqx3.l1} & \color{RunTwored} 1.22 & \color{APJgreen} 1.94 & \color{SbSorange} 1.22 & - \\
+         & \texttt{ktqx3.r1} & \color{RunTwored}-1.22 & \color{APJgreen}-2.88 & \color{SbSorange}-1.22 & + \\\hline \midrule
+     IR5 & \texttt{ktqx1.l5} & \color{RunTwored} 2.0  & \color{APJgreen} 0    & \color{SbSorange} 2.25 & - \\
+         & \texttt{ktqx1.r5} & \color{RunTwored}-2.0  & \color{APJgreen} 0    & \color{SbSorange}-2.10 & + \\
+         & \texttt{ktqx2.l5} & \color{RunTwored} 0.26 & \color{APJgreen} 0.38 & \color{SbSorange} 0.16 & + \\
+         & \texttt{ktqx2.r5} & \color{RunTwored} 1.48 & \color{APJgreen} 0.93 & \color{SbSorange} 1.35 & - \\
+         & \texttt{ktqx3.l5} & \color{RunTwored} 1.49 & \color{APJgreen} 3.40 & \color{SbSorange} 2.25 & - \\
+         & \texttt{ktqx3.r5} & \color{RunTwored}-1.49 & \color{APJgreen}-2.46 & \color{SbSorange}-2.10 & + \\\hline \midrule
         \end{tabular} 
         }
         }
@@ -193,6 +202,24 @@ Andreas Wegscheider on behalf of the OMC team\\%
     \begin{itemize}
         \item $\beta$~beating \highl{after implementation} of local corrections in IPs \textbf{1}, \textbf{2}, \textbf{5} and \textbf{8}
         \item IP1 correction is taken from \highl{APJ}, others from \highl{SbS}
+        \item $\beta$~beating stays \highl{under 20\%}
+    \end{itemize}
+    
+\end{frame}
+
+
+\begin{frame}{\SI{30}{cm} Optics -- before and after global corrections}
+
+    \begin{center}
+    \includegraphics[width=0.49\linewidth]{images/squeeze/b1_bb_comp.pdf}
+    \hfill
+    \includegraphics[width=0.49\linewidth]{images/squeeze/b2_bb_comp.pdf}
+    \end{center}
+    
+    \begin{itemize}
+        \item $\beta$~beating \highl{after implementation} of local corrections in IPs \textbf{1}, \textbf{2}, \textbf{5} and \textbf{8}
+        \item IP1 correction is taken from \highl{APJ}, others from \highl{SbS}
+        \item $\beta$~beating stays \highl{under 20\%}
     \end{itemize}
     
 \end{frame}
@@ -209,8 +236,24 @@ Andreas Wegscheider on behalf of the OMC team\\%
 \section{Non-linear optics}
 
 
+\begin{frame}{Chromaticity}
+    \begin{itemize}
+        \item $Q''$ agrees with beam test, $Q'''$ does not
+        \item $Q'''$ corrected in a first step
+        \item $Q'''$ and $Q''$ corrected in second iteration
+    \end{itemize}
+\end{frame}
+
+
 \begin{frame}{Amplitude Detuning}
+    \begin{center}
+        \includegraphics[width=0.5\linewidth]{images/nonlinear/comparison_2018_2022_dQYd2JX_corrected.pdf}
+    \end{center}
     
+    \begin{itemize}
+        \item amplitude detuning larger than in run 2
+        \item recomputing of IR non-linear correction necessary
+    \end{itemize}
 \end{frame}
 
 
