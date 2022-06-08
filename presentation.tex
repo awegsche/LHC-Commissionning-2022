@@ -95,9 +95,9 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
     &\multicolumn{2}{c}{May}
     &\multicolumn{2}{c}{June}\\
 %date & actual            & date & actual          & date & actual            \\
-\we 23.  & \we\faSunrise \faSun &     02.   &    \faSun \faMoon  &     03.   &    \faSun \faMoon    \\
-\we 24.  & \we\faSun \faMoon    &     04.   &    \faSunrise      & \we 04.   & \we\faSun \faMoon    \\
-    25.  &    \faSun            & \we 08.   & \we\faMoon         & \ho 06.   & \ho\faSunrise        \\
+\we 23.  & \we \faSun           &     02.   &    \faSun \faMoon  &     03.   &    \faSun \faMoon    \\
+\we 24.  & \we\faSun \faMoon    &     04.   &    \faSun          & \we 04.   & \we\faSun \faMoon    \\
+    25.  &    \faSun            & \we 08.   & \we\faMoon         & \ho 06.   & \ho\faSun            \\
     26.  &    \faSun            &     09.   &    \faMoon         &           &                      \\
     27.  &    \faMoon           &     10.   &    \faMoon         &           &                      \\
     28.  &    \faMoon           & \we 21.   & \we\faMoon         &           &                      \\
@@ -125,6 +125,7 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
     \item many shifts on holidays / weekends (11 out of 20)
     \item still many night shifts (7 pure and 12  with considerable nighttime out of 20 total)
     \item team of dedicated night owls
+    \visible<2>{\includegraphics[width=\linewidth]{images/owls/omc_team1.png}}
 \end{itemize}
 
 \end{minipage}
@@ -146,61 +147,7 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
 \end{frame}
 
 
-\section{The Way to Top Energy}
-
-% Injection --------------------------------------------------------------------
-
-
-\begin{frame}{Injection optics}
-    \includegraphics[width=0.49\linewidth]{images/beamtest/b1_bb.pdf}
-    \hfill
-    \includegraphics[width=0.49\linewidth]{images/beamtest/b2_bb.pdf}
-    
-    \begin{itemize}
-        \item  Measured the injection optics with the corrections of \highl{2021 beam test}.
-        \item Looks similar, \highl{no corrections} were re-calculated.
-    \end{itemize}
-\end{frame}
-
-
-% Ramp -------------------------------------------------------------------------
-
-
-\begin{frame}{Coupling in the Ramp}
-    \includegraphics[width=0.49\linewidth]{images/ramp/B1_coupling_correction_knobs_in_ramp.pdf}
-    \hfill
-    \includegraphics[width=0.49\linewidth]{images/ramp/B2_coupling_correction_knobs_in_ramp.pdf}
-    
-    \begin{itemize}
-        \item %
-            did \highl{manual coupling} measurement during the ramp because the coupling server
-            \highl{failed to give} good results 
-        \item %
-            calculated \highl{coupling corrections} (verifying on the way that the selected model didn't deteriorate the calculations)
-        \item %
-            these were \highl{programmed in} to be applied during the next ramp
-        \item %
-            re-measure showed that we corrected \highl{$< 0.005$ at every pick-up point}
-    \end{itemize}
-\end{frame}
-
-
-%% Flattop ---------------------------------------------------------------------
-%
-%
-%\begin{frame}{Flattop, $\beta$=133\,cm}
-%    
-%    \includegraphics[width=0.49\linewidth]{images/flattop/b1_bb.pdf}
-%    \hfill
-%    \includegraphics[width=0.49\linewidth]{images/flattop/b2_bb.pdf}
-%    \begin{itemize}
-%        \item measurements at \SI{6.8}{TeV} performed
-%        \item errors within tolerances, no dedicated corrections
-%    \end{itemize}
-%    
-%\end{frame}
-
-\section{Squeeze}
+\section{Linear Optics}
 
 
 \begin{frame}{30\,cm Optics -- record high $\beta$~beating}
@@ -217,25 +164,10 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
 \end{frame}
 
 
-\begin{frame}{30\,cm Optics \only<2>{-- Beam~1}\only<3>{-- Beam~2}}
+\begin{frame}{30\,cm Optics}
     \begin{center}
         \only<2>{
-            \includegraphics[width=0.4\linewidth]{images/flattop/beam1_x_IP1.pdf}
-            \hspace{1cm}
-            \includegraphics[width=0.4\linewidth]{images/flattop/beam1_x_IP5.pdf}
-            \\
-            \includegraphics[width=0.4\linewidth]{images/flattop/beam1_y_IP1.pdf}
-            \hspace{1cm}
-            \includegraphics[width=0.4\linewidth]{images/flattop/beam1_y_IP5.pdf}
-        }
-        \only<3>{
-            \includegraphics[width=0.4\linewidth]{images/flattop/beam2_x_IP1.pdf}
-            \hspace{1cm}
-            \includegraphics[width=0.4\linewidth]{images/flattop/beam2_x_IP5.pdf}
-            \\
-            \includegraphics[width=0.4\linewidth]{images/flattop/beam2_y_IP1.pdf}
-            \hspace{1cm}
-            \includegraphics[width=0.4\linewidth]{images/flattop/beam2_y_IP5.pdf}
+            \includegraphics[width=0.8\linewidth]{images/flattop/beam2_x_IP1.pdf}
         }
         \only<1>{
         {\tiny
@@ -343,40 +275,6 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
 % Non-Linear ------------------------------------------------------------------
 \section{Non-linear optics}
 
-
-\begin{frame}{Chromaticity}
-    %\begin{center}
-    %    \includegraphics[width=0.49\linewidth]{images/nonlinear/comparison/qxb1q4.png}
-    %\end{center}
-    \begin{tabular}{l|SS|Sl}
-        &\multicolumn{2}{c|}{Beam 1} & \multicolumn{2}{c}{Beam 2}  \\
-        &\textbf{injection} & \textbf{60 deg} & \textbf{injection} & \textbf{60 deg} \\ 
-        \hline
-       $Q''_x\, [10^3]$  & -0.61 \pm 0.013 & -13.22 \pm 1.58 & -0.85 \pm 0.014 & -\\
-       $Q''_y\, [10^3]$  & -0.23 \pm 0.012 &   7.83 \pm 0.08 & -0.29 \pm 0.012 & -\\
-       $Q'''_x\, [10^6]$ & -1.00 \pm 0.03  & -19.56 \pm 4.73 &  0.66 \pm 0.03  & -\\
-       $Q'''_y\, [10^6]$ &  0.13 \pm 0.02  &  12.35 \pm 0.37 &  0.09 \pm 0.02  & -\\
-    \end{tabular}\\[1em]
-    
-    \begin{itemize}
-        \item $Q''$ and $Q'''$ \highl{agree} with run II%, $Q'''$ does \highl{not}
-        \item \highl{much larger} $dp/p$ range (2015: $\SI{2.5e-3}{}$, now: $\SI{3.5e-3}{}$)
-        \item $Q''$ and $Q'''$ \highl{corrected} 
-    \end{itemize}
-\end{frame}
-
-
-%\begin{frame}{b5 Resonance}
-%    \begin{center}
-%        \includegraphics[width=0.5\linewidth]{images/nonlinear/b5_preliminary.png}
-%    \end{center}
-%    \begin{itemize}
-%        \item b5 resonance observed
-%        \item seems to get worse after $Q'''$ corrections (non-global source of b5)
-%    \end{itemize}
-%\end{frame}
-
-
 \begin{frame}{Amplitude Detuning at $\beta^*$ = 30cm, top energy}
     \begin{center}
         \includegraphics[width=0.5\linewidth]{images/nonlinear/comparison_2018_2022_dQYd2JX_corrected.pdf}
@@ -438,6 +336,156 @@ LSA (online information about trimmed-in knobs)
     %for stephane: magnetic tcts ruled out 
     
 \end{frame}
+
+\section{Backup Slides}
+
+
+% Injection --------------------------------------------------------------------
+
+
+\begin{frame}{Injection optics}
+    \includegraphics[width=0.49\linewidth]{images/beamtest/b1_bb.pdf}
+    \hfill
+    \includegraphics[width=0.49\linewidth]{images/beamtest/b2_bb.pdf}
+    
+    \begin{itemize}
+        \item  Measured the injection optics with the corrections of \highl{2021 beam test}.
+        \item Looks similar, \highl{no corrections} were re-calculated.
+    \end{itemize}
+\end{frame}
+
+
+% Ramp -------------------------------------------------------------------------
+% Flattop ---------------------------------------------------------------------
+
+
+\begin{frame}{Flattop, $\beta$=133\,cm}
+    
+    \includegraphics[width=0.49\linewidth]{images/flattop/b1_bb.pdf}
+    \hfill
+    \includegraphics[width=0.49\linewidth]{images/flattop/b2_bb.pdf}
+    \begin{itemize}
+        \item measurements at \SI{6.8}{TeV} performed
+        \item errors within tolerances, no dedicated corrections
+    \end{itemize}
+    
+\end{frame}
+
+
+\begin{frame}{Coupling in the Ramp}
+    \includegraphics[width=0.49\linewidth]{images/ramp/B1_coupling_correction_knobs_in_ramp.pdf}
+    \hfill
+    \includegraphics[width=0.49\linewidth]{images/ramp/B2_coupling_correction_knobs_in_ramp.pdf}
+    
+    \begin{itemize}
+        \item %
+            did \highl{manual coupling} measurement during the ramp because the coupling server
+            \highl{failed to give} good results 
+        \item %
+            calculated \highl{coupling corrections} (verifying on the way that the selected model didn't deteriorate the calculations)
+        \item %
+            these were \highl{programmed in} to be applied during the next ramp
+        \item %
+            re-measure showed that we corrected \highl{$< 0.005$ at every pick-up point}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{30\,cm Optics \only<2>{-- Beam~1}\only<3>{-- Beam~2}}
+    \begin{center}
+        \only<2>{
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam1_x_IP1.pdf}
+            \hspace{1cm}
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam1_x_IP5.pdf}
+            \\
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam1_y_IP1.pdf}
+            \hspace{1cm}
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam1_y_IP5.pdf}
+        }
+        \only<3>{
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam2_x_IP1.pdf}
+            \hspace{1cm}
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam2_x_IP5.pdf}
+            \\
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam2_y_IP1.pdf}
+            \hspace{1cm}
+            \includegraphics[width=0.4\linewidth]{images/flattop/beam2_y_IP5.pdf}
+        }
+        \only<1>{
+        {\tiny
+         \begin{tabular}{l|lSSSS|c|} \toprule
+              & \textbf{Circuit}%
+              & \multicolumn{4}{c|}{$\Delta k (10^{-5}\SI{}{m^{-2}})$}
+              & \textbf{Polarity}%
+              \\ \cmidrule{2-6}
+              &
+              & \multicolumn{1}{c}{\color{RunTwored}\textbf{Run 2}}
+              &{\color{APJgreen}\textbf{APJ}}
+              &{\color{SbSorange}\textbf{SbS}}
+              &{\textbf{ML}}
+              & \textbf{LSA} \\\hline \midrule
+     IR1 & \texttt{ktqx1.l1} & \color{RunTwored} 1.23 & \color{APJgreen} 0    & \color{SbSorange} 1.23 &  1.23 & - \\
+         & \texttt{ktqx1.r1} & \color{RunTwored}-1.23 & \color{APJgreen} 0    & \color{SbSorange}-1.23 & -1.24 & + \\
+         & \texttt{ktqx2.l1} & \color{RunTwored} 0.65 & \color{APJgreen} 1.15 & \color{SbSorange} 0.41 & -0.11 & + \\
+         & \texttt{ktqx2.r1} & \color{RunTwored}-1.0  & \color{APJgreen}-0.87 & \color{SbSorange}-0.70 &  0.18 & - \\
+         & \texttt{ktqx3.l1} & \color{RunTwored} 1.22 & \color{APJgreen} 1.94 & \color{SbSorange} 1.22 &  0.31 & - \\
+         & \texttt{ktqx3.r1} & \color{RunTwored}-1.22 & \color{APJgreen}-2.88 & \color{SbSorange}-1.22 & -0.1  & + \\\hline \midrule
+     IR5 & \texttt{ktqx1.l5} & \color{RunTwored} 2.0  & \color{APJgreen} 0    & \color{SbSorange} 2.25 & \text{-} & - \\
+         & \texttt{ktqx1.r5} & \color{RunTwored}-2.0  & \color{APJgreen} 0    & \color{SbSorange}-2.10 & \text{-} & + \\
+         & \texttt{ktqx2.l5} & \color{RunTwored} 0.26 & \color{APJgreen} 0.38 & \color{SbSorange} 0.16 & \text{-} & + \\
+         & \texttt{ktqx2.r5} & \color{RunTwored} 1.48 & \color{APJgreen} 0.93 & \color{SbSorange} 1.35 & \text{-} & - \\
+         & \texttt{ktqx3.l5} & \color{RunTwored} 1.49 & \color{APJgreen} 3.40 & \color{SbSorange} 2.25 & \text{-} & - \\
+         & \texttt{ktqx3.r5} & \color{RunTwored}-1.49 & \color{APJgreen}-2.46 & \color{SbSorange}-2.10 & \text{-} & + \\\hline \midrule
+        \end{tabular} 
+        }
+        }
+    \end{center}
+    \begin{itemize}
+        \item measurements at $\beta^*=\SI{30}{\centi\meter}$ performed
+        \item corrections calculated using \highl{APJ}, \highl{SbS}, \highl{ML} and taken from \highl{run2}
+        \item ML correction yield good results but are \highl{less local}
+        \item APJ and SbS yield \highl{similar corrections},
+            run2 corrs are over-correcting
+    \end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Chromaticity}
+    %\begin{center}
+    %    \includegraphics[width=0.49\linewidth]{images/nonlinear/comparison/qxb1q4.png}
+    %\end{center}
+    \begin{tabular}{l|SS|Sl}
+        &\multicolumn{2}{c|}{Beam 1} & \multicolumn{2}{c}{Beam 2}  \\
+        &\textbf{injection} & \textbf{60 deg} & \textbf{injection} & \textbf{60 deg} \\ 
+        \hline
+       $Q''_x\, [10^3]$  & -0.61 \pm 0.013 & -13.22 \pm 1.58 & -0.85 \pm 0.014 & -\\
+       $Q''_y\, [10^3]$  & -0.23 \pm 0.012 &   7.83 \pm 0.08 & -0.29 \pm 0.012 & -\\
+       $Q'''_x\, [10^6]$ & -1.00 \pm 0.03  & -19.56 \pm 4.73 &  0.66 \pm 0.03  & -\\
+       $Q'''_y\, [10^6]$ &  0.13 \pm 0.02  &  12.35 \pm 0.37 &  0.09 \pm 0.02  & -\\
+    \end{tabular}\\[1em]
+    
+    \begin{itemize}
+        \item $Q''$ and $Q'''$ \highl{agree} with run II%, $Q'''$ does \highl{not}
+        \item \highl{much larger} $dp/p$ range (2015: $\SI{2.5e-3}{}$, now: $\SI{3.5e-3}{}$)
+        \item $Q''$ and $Q'''$ \highl{corrected} 
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{b5 Resonance}
+    \begin{center}
+        \includegraphics[width=0.5\linewidth]{images/nonlinear/b5_preliminary.png}
+    \end{center}
+    \begin{itemize}
+        \item b5 resonance observed
+        \item seems to get worse after $Q'''$ corrections
+    \end{itemize}
+\end{frame}
+
+
 
 % \backcover
 
