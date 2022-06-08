@@ -72,6 +72,10 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
 % hacky, I know ...
 \centering%
 \includegraphics[width=3cm]{OMC_logo_original.pdf}%
+\\
+\textbf{Thanks to}
+J\"org Wenninger, Matteo Solfaroli Camillocci, the coordinators and EICs who helped with the measurements,
+Stephane Fartoukh, Riccardo de Maria and Michi Hostettler
 }
 \title[LHC 2022]{LHC Commissioning 2022}
 \logo{} 
@@ -151,10 +155,12 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
     \frametitle{Optics Measurements}
 
     \begin{minipage}{0.55\linewidth}
+    \begin{center}
         \begin{tikzpicture}
-        \node (b1) {\includegraphics[width=.7\linewidth]{images/acdipole/ac_plot}};
-        \node at ($(b1) + (1.1,1.1)$) {\includegraphics[width=.35\linewidth]{images/acdipole/ac_plot_zoom}};
+            \node (b1) {\includegraphics[width=.8\linewidth]{images/acdipole/ac_plot}};
+            \node at ($(b1) + (1.1,1.1)$) {\includegraphics[width=.35\linewidth]{images/acdipole/ac_plot_zoom}};
         \end{tikzpicture}
+    \end{center}
 
             \footnotesize
         \begin{itemize}
@@ -166,14 +172,37 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
         \normalsize
     \end{minipage}
     %
-    \begin{minipage}[b]{0.44\linewidth}
-        \textbf{Model dependent analysis}\\[0.5em]
-        \small
+    \begin{minipage}{0.44\linewidth}
+        \textbf{Model dependent analysis}\\[-0.5em]
+        \footnotesize
         \begin{itemize}
             \item many of our algorithms depend on model values
             \item need good knowledge of machine configuration
         \end{itemize}
+        
+        \textbf{Some references}
+        
+        \tiny
+        T.~Persson et al,
+        \emph{Improved control of the betatron coupling in the Large Hadron Collider},
+        \href{https://cds.cern.ch/record/2135848?ln=en}{\faExternalLink*}
+        \\[-0.5em]
+        
+        T.~Persson et al,
+        \emph{LHC optics commissioning: A journey towards 1\% optics control},
+        \href{https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.20.061002}{\faExternalLink*}
+        \\[-0.5em]
+        
+        A.~Wegscheider et al,
+        \emph{Analytical N beam position monitor method},
+        \href{https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.20.111002}{\faExternalLink*}
+        \\[-0.5em]
+        
+        \emph{Chapter about Physics on the OMC website}
+        \href{https://pylhc.github.io/measurements/physics}{\faExternalLink*}
+        
         \normalsize
+        
     \end{minipage}
 \end{frame}
 
@@ -187,7 +216,7 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
         \item crucial to get sufficient \highl{kick amplitude} at top energy
         \item benefitial for linear and non-linear measurements
         \item no need to call collimation expert during night shift on a holiday
-        \item \highl{huge effort} from collimation, whole shift two measure and prepare the sequence
+        \item \highl{huge effort} from collimation, whole shift to measure and prepare the sequence
     \end{itemize}
 
 \end{frame}
@@ -202,7 +231,7 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
     \item having an \emph{online model} that represents the current lattice configuration is a \highl{challenging task}
     \item several attempts in the past
     \item OMC-OP workshop: decision to create \highl{central optics repository}
-    \item  global effort \highl{OP}+\highl{ABP}, combining \highl{acc-models} (repository of design optics) with
+    \item  global effort \highl{OP}+\highl{ABP}, combining \highl{\href{https://gitlab.cern.ch/acc-models}{acc-models \faExternalLink*}} (repository of design optics) with
 LSA (online information about trimmed-in knobs, \highl{StateTracker})
     %\item (TODO: insert sketch of workflow)
     %\item still not fully adapted: up to June 2nd trim to wrong place
@@ -232,6 +261,7 @@ LSA (online information about trimmed-in knobs, \highl{StateTracker})
     \begin{itemize}
         \item peak $\beta$~beating of \textbf{150 \%}
         \item highest ever measured in the LHC
+        \item first time ATS factor 2 (before it was 1.33 at \SI{30}{cm})
     \end{itemize}
     
 \end{frame}
@@ -271,13 +301,19 @@ LSA (online information about trimmed-in knobs, \highl{StateTracker})
         }
         }
     \end{center}
+    \only<1>{
     \begin{itemize}
         \item measurements at $\beta^*=\SI{30}{\centi\meter}$ performed
         \item corrections calculated using \highl{APJ}, \highl{SbS}, \highl{ML} and taken from \highl{run2}
         \item ML correction yield good results but are \highl{less local}
-        \item APJ and SbS yield \highl{similar corrections},
-            run2 corrs are over-correcting
     \end{itemize}
+    }
+    \only<2>{
+    \begin{itemize}
+        \item APJ and SbS yield \highl{similar corrections},
+            run2 corrections are over-correcting when applied now
+    \end{itemize}
+    }
 \end{frame}
 
 
@@ -303,6 +339,17 @@ LSA (online information about trimmed-in knobs, \highl{StateTracker})
     
 \end{frame}
 
+
+\begin{frame}{Arc45 and 81 correction bumps}
+
+
+\begin{itemize}
+    \item correction was found in Run~2 for flat optics using orbit bumps
+    \item comparable phase deviation observed in Run~3
+    \item correction bumps for Run~3 commissioning calculated
+\end{itemize}
+    
+\end{frame}
 
 \begin{frame}{Coupling Corrections}
     \begin{minipage}{0.55\linewidth}
@@ -346,9 +393,9 @@ LSA (online information about trimmed-in knobs, \highl{StateTracker})
     \end{center}
     
     \begin{itemize}
-        \item amplitude detuning \highl{larger} than in run 2
+        \item cross term \highl{larger} than in run 2,
+        with positive sign (should be negative for stability)
         \item at injection corrected to the level of \highl{previous years} with same corrections
-        \item amplitude detuning in \highl{wrong direction} (needs to be corrected)
     \end{itemize}
 \end{frame}
 
@@ -357,12 +404,15 @@ LSA (online information about trimmed-in knobs, \highl{StateTracker})
 
 \begin{frame}{Reproducibility}
 
-    \includegraphics[width=0.6\linewidth]{images/reproducibility/B2_26May_9May.png}
+
+    \includegraphics[width=0.5\linewidth]{images/reproducibility/B2_26May_9May.png}
 
 \begin{itemize}
-    \item big change in $\beta$~beating between 9th May and 26th May (especially Beam 2)
+    \item \highl{big change} in $\beta$~beating between 9th May and 26th May (especially Beam 2)
+    \item main hypothesis is the $dE/E$ shifts due to  \highl{orbit correction},
+    to be confirmed by simulations / measurements
     \item  commissioning \highl{robust}, from 29 until today, reproducibility \highl{below 2 \%}
-    \item  full understanding \highl{ongoing}, will be covered later
+    %\item  full understanding \highl{ongoing}, will be covered later
 \end{itemize}
 
     %for stephane: magnetic tcts ruled out 
@@ -375,11 +425,11 @@ LSA (online information about trimmed-in knobs, \highl{StateTracker})
     \frametitle{Summary and Outlook}
 
     \begin{itemize}
-        \item run3 commissioning features \highl{more techniques} than in run2, e.g.: $Q''$ and $Q'''$ correactions, $b_4$,
+        \item optics commissionning that has been spread out over all of run~2 is now done in one year
+         \item \highl{many techniques}, e.g.: $Q''$ and $Q'''$ corrections, $b_4$,
         local corrections,
         feed-down from sextupoles in arcs, 
         $b_6$ corrections for the first time
-        \item optics commissionning that has been spread out over all of run~2 is now done in one year
         \item 4 different optics: \highl{Van-der-Meer, Ballistic, 60 degree, nominal}
         \item first time ATS factor 2 (before it was 1.33)
         \item are doing \highl{final steps} for commissioning now
@@ -388,6 +438,31 @@ LSA (online information about trimmed-in knobs, \highl{StateTracker})
         \item huge effort from participants, who often worked outside working hours but also from different sections, collimation and OP, that made this amount of commissioning possible
     \end{itemize}
 
+\end{frame}
+
+
+\begin{frame}{Publications from this commissioning}
+
+
+        
+        T.~Persson et al,
+        \emph{
+Optics correction strategy for Run 3 of the LHC	},
+        \\[0.5em]
+        
+        
+        J.F.~Cardona et al,
+        \emph{PROGRESS ON ACTION PHASE JUMP FOR LHC LOCAL OPTICS
+CORRECTION},
+        \\[0.5em]
+        
+
+        E.~Fol et al,
+        \emph{
+Experimental Demonstration of Machine Learning Application in LHC Optics Commissioning
+	},
+        \\[0.5em]
+    
 \end{frame}
 
 
