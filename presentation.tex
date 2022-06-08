@@ -51,10 +51,10 @@
 \newcommand{\ho}{\cellcolor{red!20!white}}
 \newcommand{\wh}{\cellcolor{green!20!white}}
 \newcommand{\bonelabel}{%
-        \node at ($(b1) +(-0.13\linewidth, 0.16\linewidth)$) {\sffamily\small\textbf{Beam 1}};
+        \node at ($(b1) +(-0.13\linewidth, 0.15\linewidth)$) {\sffamily\small\textbf{Beam 1}};
 }
 \newcommand{\btwolabel}{%
-        \node at ($(b1) +(-0.13\linewidth, 0.16\linewidth)$) {\sffamily\small\textbf{Beam 2}};
+        \node at ($(b2) +(-0.13\linewidth, 0.15\linewidth)$) {\sffamily\small\textbf{Beam 2}};
 }
 
 % highly illegal!
@@ -135,14 +135,16 @@ Stephane Fartoukh, Riccardo de Maria and Michi Hostettler
     \begin{minipage}{0.59\linewidth}
     \normalsize
 
-    \small
+    \footnotesize
     \begin{itemize}
         \item out of 21 shifts, many on holidays / weekends (\highl{11}), \highl{only 3} during working hours
         \item people who are \highl{not full-time} LHC\\
         {\footnotesize(FCC, myon colliders, injectors)}
-        \item much work outside working hours, team of dedicated night owls
+        \item more than 3 years of Run~2 commissioning condensed into a \highl{few months}
+        \item \highl{4 optics} (Nominal, Ballistic, Van-der-Meer, 60 degrees)
+        \only<1>{\item much work outside working hours, team of dedicated night owls}
         \begin{center}
-            \visible<2>{\includegraphics[width=0.9\linewidth]{images/owls/omc_team1.png}}
+            \only<2>{\includegraphics[width=0.8\linewidth]{images/owls/omc_team1.png}}
         \end{center}
     \end{itemize}
     \normalsize
@@ -249,12 +251,10 @@ LSA (online information about trimmed-in knobs, \highl{StateTracker})
 \begin{frame}{30\,cm Optics -- record high $\beta$~beating}
 
     \begin{tikzpicture}
-        \node[above left] (b1) {\includegraphics[width=0.45\linewidth]{images/squeeze/b1_recordhigh.pdf}};
+        \node[above left] (b1) {\includegraphics[width=0.5\linewidth]{images/squeeze/b1_recordhigh.pdf}};
         \bonelabel
-    \end{tikzpicture}
-    \hfill
-    \begin{tikzpicture}
-        \node (b1) {\includegraphics[width=0.45\linewidth]{images/squeeze/b2_recordhigh.pdf}};
+        \node (b2) at ($(b1) + (0.5\linewidth,0)$)
+            {\includegraphics[width=0.5\linewidth]{images/squeeze/b2_recordhigh.pdf}};
         \btwolabel
     \end{tikzpicture}
     
@@ -317,31 +317,59 @@ LSA (online information about trimmed-in knobs, \highl{StateTracker})
 \end{frame}
 
 
-\begin{frame}{30\,cm Optics -- before and after local corrections}
+\begin{frame}{30\,cm Optics -- before and after local corrs}
 
-    \begin{center}
+    %\begin{center}
         \begin{tikzpicture}
-            \node (b1) {\includegraphics[width=0.45\linewidth]{images/squeeze/b1_bb_comp.pdf}};
+            \node (b1) {\includegraphics[width=0.52\linewidth]{images/squeeze/b1_bb_comp.pdf}};
+            \node (b2) at ($(b1) + (0.52\linewidth,0)$) 
+                {\includegraphics[width=0.52\linewidth]{images/squeeze/b2_bb_comp.pdf}};
             \bonelabel   
+            \btwolabel   
         \end{tikzpicture}
-        \hfill
-        \begin{tikzpicture}
-            \node (b1) {\includegraphics[width=0.45\linewidth]{images/squeeze/b2_bb_comp.pdf}};
-            \btwolabel
-        \end{tikzpicture}
-    \end{center}
-    
+    %\end{center}
+    \vspace{-0.5em}
+    \small
     \begin{itemize}
         \item $\beta$~beating \highl{after implementation} of local corrections in IPs \textbf{1}, \textbf{2}, \textbf{5} and \textbf{8}
         \item IP1 correction is taken from \highl{APJ}, others from \highl{SbS}
         \item $\beta$~beating stays \highl{under 20\%}
     \end{itemize}
+    \normalsize
     
 \end{frame}
 
 
 \begin{frame}{Arc45 and 81 correction bumps}
 
+\begin{minipage}[b]{0.7\linewidth}
+\includegraphics[width=\linewidth]{images/arcs/x_bumps.png}
+\end{minipage}
+\begin{minipage}[b]{0.29\linewidth}
+
+\footnotesize
+        \textbf{Orbit bump correction settings}
+        
+       \begin{tabular}{c|S}
+       element & \text{correction}\\
+       \hline
+          \texttt{MCBH.16R4}  &  8e-6\\
+          \texttt{MCBH.20R4}  &  16e-6\\
+          \texttt{MCBH.24R4}  &  16e-6\\
+          \texttt{MCBH.28R4}  &  8e-6\\
+       \end{tabular}
+       \vspace{0.5em}
+       
+        \textbf{Quad trim}
+        
+       \begin{tabular}{c|S}
+       element & \text{correction}\\
+       \hline
+          \texttt{MQML.10R4}  &  2e-5\\
+       \end{tabular}
+       \vspace{1.5em}
+       \normalsize
+\end{minipage}
 
 \begin{itemize}
     \item correction was found in Run~2 for flat optics using orbit bumps
@@ -392,11 +420,16 @@ LSA (online information about trimmed-in knobs, \highl{StateTracker})
         \includegraphics[width=0.5\linewidth]{images/nonlinear/comparison_2018_2022_dQYd2JX_corrected.pdf}
     \end{center}
     
+    \small
     \begin{itemize}
+        \item $Q''$, $Q'''$ and higher-order chroma at injection + corrections
+        \item normal and skew sextupole corrections at end-of-squeeze
+        \item \highl{first ever dodecapole} corrections in LHC
         \item cross term \highl{larger} than in run 2,
         with positive sign (should be negative for stability)
         \item at injection corrected to the level of \highl{previous years} with same corrections
     \end{itemize}
+    \normalsize
 \end{frame}
 
 
@@ -593,12 +626,10 @@ Experimental Demonstration of Machine Learning Application in LHC Optics Commiss
 
     \begin{center}
         \begin{tikzpicture}
-            \node (b1) {\includegraphics[width=0.45\linewidth]{images/squeeze/b1_bb_comp_after_global.pdf}};
+            \node (b1) {\includegraphics[width=0.5\linewidth]{images/squeeze/b1_bb_comp_after_global.pdf}};
+            \node (b2) at ($(b1) + (0.5\linewidth,0)$)
+            {\includegraphics[width=0.5\linewidth]{images/squeeze/b2_bb_comp_after_global.pdf}};
             \bonelabel
-        \end{tikzpicture}
-        \hfill
-        \begin{tikzpicture}
-            \node (b1) {\includegraphics[width=0.45\linewidth]{images/squeeze/b2_bb_comp_after_global.pdf}};
             \btwolabel
         \end{tikzpicture}
     \end{center}
