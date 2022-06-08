@@ -49,6 +49,7 @@
 \definecolor{SbSorange}{RGB}{240,150,0}
 \newcommand{\we}{\cellcolor{blue!20!white}}
 \newcommand{\ho}{\cellcolor{red!20!white}}
+\newcommand{\wh}{\cellcolor{green!20!white}}
 \newcommand{\bonelabel}{%
         \node at ($(b1) +(-0.13\linewidth, 0.16\linewidth)$) {\sffamily\small\textbf{Beam 1}};
 }
@@ -91,7 +92,7 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
 \tableofcontents
 \end{frame}
 
-\section{OMC Shifts}
+\section{OMC Procedures and Shifts}
 
 \begin{frame}{Shift Schedule }
 
@@ -104,17 +105,17 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
         &\multicolumn{2}{c}{May}
         &\multicolumn{2}{c}{June}\\
     %date & actual            & date & actual          & date & actual            \\
-    \we 23.  & \we \faSun           &     02.   &    \faSun \faMoon  &     03.   &    \faSun \faMoon    \\
-    \we 24.  & \we\faSun \faMoon    &     04.   &    \faSun          & \we 04.   & \we\faSun \faMoon    \\
-        25.  &    \faSun            & \we 08.   & \we\faMoon         & \ho 06.   & \ho\faSun            \\
-        26.  &    \faSun            &     09.   &    \faMoon         &           &                      \\
-        27.  &    \faMoon           &     10.   &    \faMoon         &           &                      \\
-        28.  &    \faMoon           & \we 21.   & \we\faMoon         &           &                      \\
-            &                      & \we 22.   & \we\faMoon         &           &                      \\
-            &                      & \ho 26.   & \ho\faSun          &           &                      \\
-            &                      & \ho 27.   & \ho\faSun          &           &                      \\
-            &                      & \we 28.   & \we\faSun \faMoon  &           &                      \\
-            &                      & \we 29.   & \we\faSun          &           &                      \\
+    \wh 22. & \wh \faSun           &     02.   &           \faMoon   & \we 03.   & \we       \faMoon    \\
+    \we 23. & \we\faSun            &     05.   &    \faMoon          & \we 04.   & \we       \faMoon    \\
+    \we 24. & \we\faSun\faMoon     & \we 07.   & \we\faMoon          & \ho 06.   & \ho\faSun            \\
+    \wh 25. & \wh\faSun            & \we 08.   & \we\faSunrise\faMoon& \wh 09.   & \wh\faSun \faMoon    \\
+        27. &    \faMoon           &     09.   &    \faSunrise\faMoon&           &                      \\
+        28. &    \faSunrise\faMoon & \we 20.   & \we\faMoon          &           &                      \\
+            &                      & \ho 26.   & \ho\faMoon          &           &                      \\
+            &                      & \ho 27.   & \ho\faMoon          &           &                      \\
+            &                      & \ho 28.   & \ho\faMoon          &           &                      \\
+            &                      & \ho 29.   & \ho\faSun \faMoon   &           &                      \\
+            &                      & \ho 31.   & \ho\faMoon          &           &                      \\
         \hline
     %    \multicolumn{2}{c|}{2(3)\faMoon / 6 }
     %    &\multicolumn{2}{c|}{5(7)\faMoon / 11}
@@ -122,9 +123,9 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
     \end{tabular}\\
     \footnotesize
 
-    \begin{tabular}{llll}
-    \faSun: day& \faMoon: night&
-    \we weekend  & \ho holiday
+    \begin{tabular}{lll}
+    \faSunrise: morning& \faSun: day& \faMoon: night\\
+    \we weekend  & \ho holiday &\wh working hours
     \end{tabular}
     \end{minipage}
     \begin{minipage}{0.59\linewidth}
@@ -355,34 +356,37 @@ LSA (online information about trimmed-in knobs, \highl{StateTracker})
 
 \begin{frame}{Reproducibility}
 
-    \includegraphics[width=0.45\linewidth]{B1_1June_Ref9May.png}
-    \hfill
-    \includegraphics[width=0.45\linewidth]{B1_1June_Ref26May.png}
+    \includegraphics[width=0.6\linewidth]{images/reproducibility/B2_26May_9May.png}
 
-\only<1>{
 \begin{itemize}
-    \item  commissioning \highl{robust}, from 26 until today reproducibility \highl{below 2 \%}
+    \item big change in $\beta$~beating between 9th May and 26th May (especially Beam 2)
+    \item  commissioning \highl{robust}, from 29 until today reproducibility \highl{below 2 \%}
     \item  full understanding \highl{ongoing},  will be covered later
 \end{itemize}
-}
 
-\only<2>{
-\begin{itemize}
-    \item run3 commissioning features \highl{more techniques} than in run2, e.g.:
-    local corrections,
-    feed-down from sextupoles in arcs, 
-    \item hiccup from changin in $\beta$~beat but \highl{now robust},
-    \item are doing \highl{final steps} for commissioning now
-    $\Rightarrow$ final configuration that we will \highl{leave in the machine}
-\end{itemize}
-}
-    
-    
-    
-    
     %for stephane: magnetic tcts ruled out 
     
 \end{frame}
+
+
+\begin{frame}
+    \frametitle{Conclusion and Outlook}
+
+    \begin{itemize}
+        \item run3 commissioning features \highl{more techniques} than in run2, e.g.:
+        local corrections,
+        feed-down from sextupoles in arcs, 
+        \item hiccup from changing in $\beta$~beat but \highl{now robust},
+        \item are doing \highl{final steps} for commissioning now
+        $\Rightarrow$ final configuration that we will \highl{leave in the machine}
+    \end{itemize}
+
+\end{frame}
+
+
+% --------------------------------------------------------------------------------------------------
+% --- BACKUP ---------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------
 
 \section{Backup Slides}
 
