@@ -23,7 +23,10 @@
 \usepackage{graphicx}
 \usepackage{grffile}  % filenames with dots 
 \usepackage{fontawesome5}
+
 \usepackage{tikz}
+\usetikzlibrary{calc}
+
 \usepackage{hyperref}
 \usepackage{siunitx}
 \usepackage{booktabs}
@@ -46,6 +49,12 @@
 \definecolor{SbSorange}{RGB}{240,150,0}
 \newcommand{\we}{\cellcolor{blue!20!white}}
 \newcommand{\ho}{\cellcolor{red!20!white}}
+\newcommand{\bonelabel}{%
+        \node at ($(b1) +(-0.13\linewidth, 0.16\linewidth)$) {\sffamily\small\textbf{Beam 1}};
+}
+\newcommand{\btwolabel}{%
+        \node at ($(b1) +(-0.13\linewidth, 0.16\linewidth)$) {\sffamily\small\textbf{Beam 2}};
+}
 
 % highly illegal!
 \newcommand{\faSunrise}{\includegraphics[width=1em]{sunrise.png}}
@@ -86,64 +95,120 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
 
 \begin{frame}{Shift Schedule }
 
-%\textbf{note:} this is just to collect now, will be cleaned for presentation
+    %\textbf{note:} this is just to collect now, will be cleaned for presentation
 
-\begin{minipage}{0.45\linewidth}
-\small
-\begin{tabular}{ll|ll|ll}
-    \multicolumn{2}{c}{April}
-    &\multicolumn{2}{c}{May}
-    &\multicolumn{2}{c}{June}\\
-%date & actual            & date & actual          & date & actual            \\
-\we 23.  & \we \faSun           &     02.   &    \faSun \faMoon  &     03.   &    \faSun \faMoon    \\
-\we 24.  & \we\faSun \faMoon    &     04.   &    \faSun          & \we 04.   & \we\faSun \faMoon    \\
-    25.  &    \faSun            & \we 08.   & \we\faMoon         & \ho 06.   & \ho\faSun            \\
-    26.  &    \faSun            &     09.   &    \faMoon         &           &                      \\
-    27.  &    \faMoon           &     10.   &    \faMoon         &           &                      \\
-    28.  &    \faMoon           & \we 21.   & \we\faMoon         &           &                      \\
-         &                      & \we 22.   & \we\faMoon         &           &                      \\
-         &                      & \ho 26.   & \ho\faSun          &           &                      \\
-         &                      & \ho 27.   & \ho\faSun          &           &                      \\
-         &                      & \we 28.   & \we\faSun \faMoon  &           &                      \\
-         &                      & \we 29.   & \we\faSun          &           &                      \\
-     \hline
- %    \multicolumn{2}{c|}{2(3)\faMoon / 6 }
- %    &\multicolumn{2}{c|}{5(7)\faMoon / 11}
- %    &\multicolumn{2}{c}{0(2)\faMoon / 3}
-\end{tabular}\\
-\footnotesize
+    \begin{minipage}{0.40\linewidth}
+    \footnotesize
+    \begin{tabular}{ll|ll|ll}
+        \multicolumn{2}{c}{April}
+        &\multicolumn{2}{c}{May}
+        &\multicolumn{2}{c}{June}\\
+    %date & actual            & date & actual          & date & actual            \\
+    \we 23.  & \we \faSun           &     02.   &    \faSun \faMoon  &     03.   &    \faSun \faMoon    \\
+    \we 24.  & \we\faSun \faMoon    &     04.   &    \faSun          & \we 04.   & \we\faSun \faMoon    \\
+        25.  &    \faSun            & \we 08.   & \we\faMoon         & \ho 06.   & \ho\faSun            \\
+        26.  &    \faSun            &     09.   &    \faMoon         &           &                      \\
+        27.  &    \faMoon           &     10.   &    \faMoon         &           &                      \\
+        28.  &    \faMoon           & \we 21.   & \we\faMoon         &           &                      \\
+            &                      & \we 22.   & \we\faMoon         &           &                      \\
+            &                      & \ho 26.   & \ho\faSun          &           &                      \\
+            &                      & \ho 27.   & \ho\faSun          &           &                      \\
+            &                      & \we 28.   & \we\faSun \faMoon  &           &                      \\
+            &                      & \we 29.   & \we\faSun          &           &                      \\
+        \hline
+    %    \multicolumn{2}{c|}{2(3)\faMoon / 6 }
+    %    &\multicolumn{2}{c|}{5(7)\faMoon / 11}
+    %    &\multicolumn{2}{c}{0(2)\faMoon / 3}
+    \end{tabular}\\
+    \footnotesize
 
-\begin{tabular}{llll}
-\faSun: day& \faMoon: night&
-   \we weekend  & \ho holiday
-\end{tabular}
-\end{minipage}
-\begin{minipage}{0.54\linewidth}
-\normalsize
+    \begin{tabular}{llll}
+    \faSun: day& \faMoon: night&
+    \we weekend  & \ho holiday
+    \end{tabular}
+    \end{minipage}
+    \begin{minipage}{0.59\linewidth}
+    \normalsize
 
-\begin{itemize}
-    \item many shifts on holidays / weekends (11 out of 20)
-    \item still many night shifts (7 pure and 12  with considerable nighttime out of 20 total)
-    \item team of dedicated night owls
-    \visible<2>{\includegraphics[width=\linewidth]{images/owls/omc_team1.png}}
-\end{itemize}
+    \small
+    \begin{itemize}
+        \item out of 21 shifts, many on holidays / weekends (\highl{11}), \highl{only 3} during working hours
+        \item people who are \highl{not full-time} LHC {\footnotesize(FCC, myon colliders, injectors)}
+        \item much work outside working hours, team of dedicated night owls
+        \begin{center}
+            \visible<2>{\includegraphics[width=0.9\linewidth]{images/owls/omc_team1.png}}
+        \end{center}
+    \end{itemize}
+    \normalsize
 
-\end{minipage}
+    \end{minipage}
 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Optics Measurements}
+
+    \begin{minipage}{0.55\linewidth}
+        \begin{tikzpicture}
+        \node (b1) {\includegraphics[width=.7\linewidth]{images/acdipole/ac_plot}};
+        \node at ($(b1) + (1.1,1.1)$) {\includegraphics[width=.35\linewidth]{images/acdipole/ac_plot_zoom}};
+        \end{tikzpicture}
+
+            \footnotesize
+        \begin{itemize}
+        \item use AC-dipole excitation to get turn-by-turn data
+        \item adiabatic ramp up, no emittance blow-up
+        \item has to be compensated
+        \item high amplitude limited by machine protection
+        \end{itemize} 
+        \normalsize
+    \end{minipage}
+    %
+    \begin{minipage}[b]{0.44\linewidth}
+        \textbf{Model dependent analysis}\\[0.5em]
+        \small
+        \begin{itemize}
+            \item many of our algorithms depend on model values
+            \item need good knowledge of machine configuration
+        \end{itemize}
+        \normalsize
+    \end{minipage}
 \end{frame}
 
 
 \begin{frame}{Dedicated Collimation Sequence}
 
+    \begin{itemize}
+        \item \highl{dedicated} collimation sequence to be trimmed in for \highl{OMC measurements}
+        \item two settings: \highl{injection} and \highl{top energy}
+        \item \highl{automates} collimation setup
+        \item crucial to get sufficient \highl{kick amplitude} at top energy
+        \item benefitial for linear and non-linear measurements
+        \item no need to call collimation expert during night shift on a holiday
+        \item \highl{huge effort} from collimation, whole shift two measure and prepare the sequence
+    \end{itemize}
+
+\end{frame}
+
+
+\section{Model Creation}
+
+
+\begin{frame}{Model Creation}
+
 \begin{itemize}
-    \item \highl{dedicated} collimation sequence to be trimmed in for \highl{OMC measurements}
-    \item two settings: \highl{injection} and \SI{30}{cm} \highl{optics}
-    \item \highl{automates} collimation setup
-    \item crucial to get sufficient \highl{kick amplitude} at top energy
-    \item no need to call collimation expert during night shift on a holiday
+    \item having an \emph{online model} that represents the current lattice configuration is a \highl{challenging task}
+    \item several attempts in the past
+    \item OMC-OP workshop: decision to create \highl{central optics repository}
+    \item  global effort \highl{OP}+\highl{ABP}, combining \highl{acc-models} (repository of design optics) with
+LSA (online information about trimmed-in knobs, \highl{StateTracker})
+    %\item (TODO: insert sketch of workflow)
+    %\item still not fully adapted: up to June 2nd trim to wrong place
+    %("We all need to get used to this, people are still used to trim everything on correction..." -- Michi)
+    \item \highl{huge effort} from OP to change usage {\footnotesize(trim on target instead of correction)}
+    \item still ongoing effort from both OP and ABP
 \end{itemize}
 
-    
 \end{frame}
 
 
@@ -152,9 +217,15 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
 
 \begin{frame}{30\,cm Optics -- record high $\beta$~beating}
 
-    \includegraphics[width=0.49\linewidth]{images/squeeze/b1_recordhigh.pdf}
+    \begin{tikzpicture}
+        \node[above left] (b1) {\includegraphics[width=0.45\linewidth]{images/squeeze/b1_recordhigh.pdf}};
+        \bonelabel
+    \end{tikzpicture}
     \hfill
-    \includegraphics[width=0.49\linewidth]{images/squeeze/b2_recordhigh.pdf}
+    \begin{tikzpicture}
+        \node (b1) {\includegraphics[width=0.45\linewidth]{images/squeeze/b2_recordhigh.pdf}};
+        \btwolabel
+    \end{tikzpicture}
     
     \begin{itemize}
         \item peak $\beta$~beating of \textbf{150 \%}
@@ -211,9 +282,15 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
 \begin{frame}{30\,cm Optics -- before and after local corrections}
 
     \begin{center}
-    \includegraphics[width=0.49\linewidth]{images/squeeze/b1_bb_comp.pdf}
-    \hfill
-    \includegraphics[width=0.49\linewidth]{images/squeeze/b2_bb_comp.pdf}
+        \begin{tikzpicture}
+            \node (b1) {\includegraphics[width=0.45\linewidth]{images/squeeze/b1_bb_comp.pdf}};
+            \bonelabel   
+        \end{tikzpicture}
+        \hfill
+        \begin{tikzpicture}
+            \node (b1) {\includegraphics[width=0.45\linewidth]{images/squeeze/b2_bb_comp.pdf}};
+            \btwolabel
+        \end{tikzpicture}
     \end{center}
     
     \begin{itemize}
@@ -224,20 +301,6 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
     
 \end{frame}
 
-
-\begin{frame}{30\,cm Optics -- before and after first global corrections}
-
-    \begin{center}
-    \includegraphics[width=0.49\linewidth]{images/squeeze/b1_bb_comp_after_global.pdf}
-    \hfill
-    \includegraphics[width=0.49\linewidth]{images/squeeze/b2_bb_comp_after_global.pdf}
-    \end{center}
-    
-    \begin{itemize}
-        \item after correction \highl{under 10\,\%} $\beta$~beating
-    \end{itemize}
-    
-\end{frame}
 
 \begin{frame}{Coupling Corrections}
     \begin{minipage}{0.55\linewidth}
@@ -282,27 +345,11 @@ T.~Persson,  F.~Carlier, A.~Costa~Ojeda, J.~Dilly, H. Garc\'ia Morales, V.~Ferre
     
     \begin{itemize}
         \item amplitude detuning \highl{larger} than in run 2
-        \item at injection corrected to the level of \highl{previous years}
+        \item at injection corrected to the level of \highl{previous years} with same corrections
+        \item amplitude detuning in \highl{wrong direction}
     \end{itemize}
 \end{frame}
 
-
-\section{Model Creation}
-
-\begin{frame}{Knob extraction}
-
-\begin{itemize}
-    \item \highl{past attempts} to introduce an online model \highl{failed}
-    \item OMC-OP workshop: decision to create \highl{central optics repository}
-    \item  global effort \highl{OP}+\highl{ABP}, combining acc-models (repository of design optics) with
-LSA (online information about trimmed-in knobs)
-    %\item (TODO: insert sketch of workflow)
-    \item still not fully adapted: up to 02.06 trim to wrong place
-    %("We all need to get used to this, people are still used to trim everything on correction..." -- Michi)
-    \item current status: separate scripts, modular, plan to combine in one repository
-\end{itemize}
-
-\end{frame}
 
 \section{Optics Reproducibility}
 
@@ -447,6 +494,27 @@ LSA (online information about trimmed-in knobs)
         \item APJ and SbS yield \highl{similar corrections},
             run2 corrs are over-correcting
     \end{itemize}
+\end{frame}
+
+
+\begin{frame}{30\,cm Optics -- before and after first global corrections}
+
+    \begin{center}
+        \begin{tikzpicture}
+            \node (b1) {\includegraphics[width=0.45\linewidth]{images/squeeze/b1_bb_comp_after_global.pdf}};
+            \bonelabel
+        \end{tikzpicture}
+        \hfill
+        \begin{tikzpicture}
+            \node (b1) {\includegraphics[width=0.45\linewidth]{images/squeeze/b2_bb_comp_after_global.pdf}};
+            \btwolabel
+        \end{tikzpicture}
+    \end{center}
+    
+    \begin{itemize}
+        \item after correction \highl{under 10\,\%} $\beta$~beating
+    \end{itemize}
+    
 \end{frame}
 
 
